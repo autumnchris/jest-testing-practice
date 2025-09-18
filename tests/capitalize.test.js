@@ -3,9 +3,6 @@ const capitalize = require('../capitalize');
 describe('Capitalize function tests.', () => {
   describe('Valid input tests.', () => {
     describe('Typical inputs.', () => {
-      test('Checks if input is a string.', () => {
-        expect(typeof capitalize('hello')).toBe('string');
-      });
       test('Capitalizes the first letter of a single word.', () => {
         expect(capitalize('hello')).toBe('Hello');
       });
@@ -32,8 +29,17 @@ describe('Capitalize function tests.', () => {
     test('Throws an error if the string is empty.', () => {
       expect(() => capitalize('')).toThrow('The \"str\" parameter must be of type string containing a value.');
     });
-    test('Throws an error if the input is not a string.', () => {
+    test('Throws an error if the input is a date.', () => {
       expect(() => capitalize(new Date())).toThrow('The \"str\" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is a number.', () => {
+      expect(() => capitalize(1)).toThrow('The \"str\" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is null.', () => {
+      expect(() => capitalize(null)).toThrow('The \"str\" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is undefined.', () => {
+      expect(() => capitalize()).toThrow('The \"str\" parameter must be of type string containing a value.');
     });
   });
 });
