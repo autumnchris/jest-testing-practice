@@ -27,19 +27,19 @@ describe('Capitalize function tests.', () => {
   });
   describe('Invalid input tests.', () => {
     test('Throws an error if the string is empty.', () => {
-      expect(() => capitalize('')).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => capitalize('')).toThrow('The "str" parameter must be of type string containing a value.');
     });
     test('Throws an error if the input is a date.', () => {
-      expect(() => capitalize(new Date())).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => capitalize(new Date())).toThrow('The "str" parameter must be of type string containing a value.');
     });
     test('Throws an error if the input is a number.', () => {
-      expect(() => capitalize(1)).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => capitalize(1)).toThrow('The "str" parameter must be of type string containing a value.');
     });
     test('Throws an error if the input is null.', () => {
-      expect(() => capitalize(null)).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => capitalize(null)).toThrow('The "str" parameter must be of type string containing a value.');
     });
     test('Throws an error if the input is undefined.', () => {
-      expect(() => capitalize()).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => capitalize()).toThrow('The "str" parameter must be of type string containing a value.');
     });
   });
 });

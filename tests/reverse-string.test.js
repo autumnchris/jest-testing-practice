@@ -21,19 +21,19 @@ describe('Reverse String function tests.', () => {
   });
   describe('Invalid input tests.', () => {
     test('Throws an error if the string is empty.', () => {
-      expect(() => reverseString('')).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => reverseString('')).toThrow('The "str" parameter must be of type string containing a value.');
     });
     test('Throws an error if the input is a date.', () => {
-      expect(() => reverseString(new Date())).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => reverseString(new Date())).toThrow('The "str" parameter must be of type string containing a value.');
     });
     test('Throws an error if the input is a number.', () => {
-      expect(() => reverseString(1)).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => reverseString(1)).toThrow('The "str" parameter must be of type string containing a value.');
     });
     test('Throws an error if the input is null.', () => {
-      expect(() => reverseString(null)).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => reverseString(null)).toThrow('The "str" parameter must be of type string containing a value.');
     });
     test('Throws an error if the input is undefined.', () => {
-      expect(() => reverseString()).toThrow('The \"str\" parameter must be of type string containing a value.');
+      expect(() => reverseString()).toThrow('The "str" parameter must be of type string containing a value.');
     });
   });
 });
