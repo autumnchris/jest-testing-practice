@@ -1,28 +1,39 @@
 const reverseString = require('../reverse-string');
 
-describe('\"reverseString\" function tests', () => {
-  test('reverseString(\'hello\') should return a value', () => {
-    expect(reverseString('hello')).toBeDefined();
+describe('Reverse String function tests.', () => {
+  describe('Valid input tests.', () => {
+    describe('Typical inputs.', () => {
+      test('Reverses the characters of a string containing a single word.', () => {
+        expect(reverseString('hello')).toBe('olleh');
+      });
+      test('Reverses the characters of a string containing punctuation and white space while preserving capitalization.', () => {
+        expect(reverseString('thiS is A tEst.')).toBe('.tsEt A si Siht');
+      });
+    });
+    describe('Edge cases.', () => {
+      test('Returns the string as is if it contains just one character.', () => {
+        expect(reverseString('a')).toBe('a');
+      });
+      test('Reverses the characters of a string with white space at the end of the string.', () => {
+        expect(reverseString('a ')).toBe(' a');
+      });
+    });
   });
-  test('reverseString(\'hello\') should be truthy', () => {
-    expect(reverseString('hello')).toBeTruthy();
-  });
-  test('reverseString(\'hello\') should return a string', () => {
-    expect(typeof reverseString('hello')).toBe('string');
-  });
-  test('reverseString(\'hello\') should return the string \"olleh\"', () => {
-    expect(reverseString('hello')).toBe('olleh');
-  });
-  test('reverseString(\'thiS is A tEst.\') should return the string \".tsEt A si Siht\"', () => {
-    expect(reverseString('thiS is A tEst.')).toBe('.tsEt A si Siht');
-  });
-  test('reverseString(\'123abc\') should return the string \"cba321\"', () => {
-    expect(reverseString('123abc')).toBe('cba321');
-  });
-  test('reverseString(\'\') should return an error', () => {
-    expect(reverseString('')).toBe('ERROR: The \"str\" parameter must be of type string containing a value.');
-  });
-  test('reverseString(new Date()) should return an error', () => {
-    expect(reverseString(new Date())).toBe('ERROR: The \"str\" parameter must be of type string containing a value.');
+  describe('Invalid input tests.', () => {
+    test('Throws an error if the string is empty.', () => {
+      expect(() => reverseString('')).toThrow('The \"str\" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is a date.', () => {
+      expect(() => reverseString(new Date())).toThrow('The \"str\" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is a number.', () => {
+      expect(() => reverseString(1)).toThrow('The \"str\" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is null.', () => {
+      expect(() => reverseString(null)).toThrow('The \"str\" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is undefined.', () => {
+      expect(() => reverseString()).toThrow('The \"str\" parameter must be of type string containing a value.');
+    });
   });
 });
