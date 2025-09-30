@@ -19,14 +19,47 @@ describe('Calculator tests.', () => {
       });
     });
     describe('Invalid input tests.', () => {
-      test('Throws an error if the first number is of type string.', () => {
+      test('Throws an error if the first argument is a string.', () => {
         expect(() => add('2', 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
-      test('Throws an error if the second number is of type string.', () => {
+      test('Throws an error if the first argument is a date.', () => {
+        expect(() => add(new Date(), 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is an array.', () => {
+        expect(() => add([], 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is an object.', () => {
+        expect(() => add({}, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is null.', () => {
+        expect(() => add(null, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is a boolean.', () => {
+        expect(() => add(true, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a string.', () => {
         expect(() => add(2, '2')).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
-      test('Throws an error if one or more inputs are undefined.', () => {
+      test('Throws an error if the second argument is a date.', () => {
+        expect(() => add(2, new Date())).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is an array.', () => {
+        expect(() => add(2, [])).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is an object.', () => {
+        expect(() => add(2, {})).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is null.', () => {
+        expect(() => add(2, null)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a boolean.', () => {
+        expect(() => add(2, true)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is undefined.', () => {
         expect(() => add(2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if there are no arguments.', () => {
+        expect(() => add()).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
     });
   });
@@ -43,14 +76,47 @@ describe('Calculator tests.', () => {
       });
     });
     describe('Invalid input tests.', () => {
-      test('Throws an error if the first number is of type string.', () => {
+      test('Throws an error if the first argument is a string.', () => {
         expect(() => subtract('2', 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
-      test('Throws an error if the second number is of type string.', () => {
+      test('Throws an error if the first argument is a date.', () => {
+        expect(() => subtract(new Date(), 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is an array.', () => {
+        expect(() => subtract([], 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is an object.', () => {
+        expect(() => subtract({}, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is null.', () => {
+        expect(() => subtract(null, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is a boolean.', () => {
+        expect(() => subtract(true, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a string.', () => {
         expect(() => subtract(2, '2')).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
-      test('Throws an error if one or more inputs are undefined.', () => {
+      test('Throws an error if the second argument is a date.', () => {
+        expect(() => subtract(2, new Date())).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is an array.', () => {
+        expect(() => subtract(2, [])).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is an object.', () => {
+        expect(() => subtract(2, {})).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is null.', () => {
+        expect(() => subtract(2, null)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a boolean.', () => {
+        expect(() => subtract(2, true)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is undefined.', () => {
         expect(() => subtract(2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if there are no arguments.', () => {
+        expect(() => subtract()).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
     });
   });
@@ -67,14 +133,47 @@ describe('Calculator tests.', () => {
       });
     });
     describe('Invalid input tests.', () => {
-      test('Throws an error if the first number is of type string.', () => {
+      test('Throws an error if the first argument is a string.', () => {
         expect(() => multiply('2', 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
-      test('Throws an error if the second number is of type string.', () => {
+      test('Throws an error if the first argument is a date.', () => {
+        expect(() => multiply(new Date(), 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is an array.', () => {
+        expect(() => multiply([], 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is an object.', () => {
+        expect(() => multiply({}, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is null.', () => {
+        expect(() => multiply(null, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is a boolean.', () => {
+        expect(() => multiply(true, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a string.', () => {
         expect(() => multiply(2, '2')).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
-      test('Throws an error if one or more inputs are undefined.', () => {
+      test('Throws an error if the second argument is a date.', () => {
+        expect(() => multiply(2, new Date())).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is an array.', () => {
+        expect(() => multiply(2, [])).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is an object.', () => {
+        expect(() => multiply(2, {})).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is null.', () => {
+        expect(() => multiply(2, null)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a boolean.', () => {
+        expect(() => multiply(2, true)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is undefined.', () => {
         expect(() => multiply(2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if there are no arguments.', () => {
+        expect(() => multiply()).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
     });
   });
@@ -91,17 +190,50 @@ describe('Calculator tests.', () => {
       });
     });
     describe('Invalid input tests.', () => {
-      test('Throws an error if the first number is of type string.', () => {
-        expect(() => divide('2', 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
-      });
-      test('Throws an error if the second number is of type string.', () => {
-        expect(() => divide(2, '2')).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
-      });
-      test('Throws an error if the second number is 0.', () => {
+      test('Throws an error if the second argument is 0.', () => {
         expect(() => divide(2, 0)).toThrow('The "num2" parameter cannot have a value of 0.');
       });
-      test('Throws an error if one or more inputs are undefined.', () => {
+      test('Throws an error if the first argument is a string.', () => {
+        expect(() => divide('2', 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is a date.', () => {
+        expect(() => divide(new Date(), 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is an array.', () => {
+        expect(() => divide([], 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is an object.', () => {
+        expect(() => divide({}, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is null.', () => {
+        expect(() => divide(null, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the first argument is a boolean.', () => {
+        expect(() => divide(true, 2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a string.', () => {
+        expect(() => divide(2, '2')).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a date.', () => {
+        expect(() => divide(2, new Date())).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is an array.', () => {
+        expect(() => divide(2, [])).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is an object.', () => {
+        expect(() => divide(2, {})).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is null.', () => {
+        expect(() => divide(2, null)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is a boolean.', () => {
+        expect(() => divide(2, true)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if the second argument is undefined.', () => {
         expect(() => divide(2)).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
+      });
+      test('Throws an error if there are no arguments.', () => {
+        expect(() => divide()).toThrow('The "num1" parameter and the "num2" parameter must be of type number.');
       });
     });
   });

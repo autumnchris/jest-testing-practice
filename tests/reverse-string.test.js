@@ -35,5 +35,14 @@ describe('Reverse String function tests.', () => {
     test('Throws an error if the input is undefined.', () => {
       expect(() => reverseString()).toThrow('The "str" parameter must be of type string containing a value.');
     });
+    test('Throws an error if the input is an array.', () => {
+      expect(() => reverseString([])).toThrow('The "str" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is an object.', () => {
+      expect(() => reverseString({})).toThrow('The "str" parameter must be of type string containing a value.');
+    });
+    test('Throws an error if the input is a boolean.', () => {
+      expect(() => reverseString(true)).toThrow('The "str" parameter must be of type string containing a value.');
+    });
   });
 });

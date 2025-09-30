@@ -55,8 +55,17 @@ describe('Analyze Array function tests.', () => {
     test('Throws an error if the input is null.', () => {
       expect(() => analyzeArray(null)).toThrow('The "arr" parameter must be of type array that must not be empty and contain only values of type number.');
     });
-        test('Throws an error if the input is undefined.', () => {
+    test('Throws an error if the input is undefined.', () => {
       expect(() => analyzeArray()).toThrow('The "arr" parameter must be of type array that must not be empty and contain only values of type number.');
+    });
+    test('Throws an error if the input is a string.', () => {
+      expect(() => analyzeArray('hello')).toThrow('The "arr" parameter must be of type array that must not be empty and contain only values of type number.');
+    });
+    test('Throws an error if the input is an object.', () => {
+      expect(() => analyzeArray({})).toThrow('The "arr" parameter must be of type array that must not be empty and contain only values of type number.');
+    });
+    test('Throws an error if the input is a boolean.', () => {
+      expect(() => analyzeArray(true)).toThrow('The "arr" parameter must be of type array that must not be empty and contain only values of type number.');
     });
   });
 });

@@ -41,5 +41,14 @@ describe('Capitalize function tests.', () => {
     test('Throws an error if the input is undefined.', () => {
       expect(() => capitalize()).toThrow('The "str" parameter must be of type string containing a value.');
     });
+    test('Throws an error if the input is an array.', () => {
+      expect(() => capitalize([])).toThrow('The "str" parameter must be of type string containing a value.');
+    });
+        test('Throws an error if the input is an object.', () => {
+      expect(() => capitalize({})).toThrow('The "str" parameter must be of type string containing a value.');
+    });
+        test('Throws an error if the input is a boolean.', () => {
+      expect(() => capitalize(true)).toThrow('The "str" parameter must be of type string containing a value.');
+    });
   });
 });
